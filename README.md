@@ -7,7 +7,7 @@ For this project I used a two page credit card submission design created by UX/U
 # Demo:
 
 
-![](https://inflatableimg.s3-us-west-1.amazonaws.com/inflatable.gif)
+![](https://inflatableimg.s3-us-west-1.amazonaws.com/inflatable2.gif)
 
 # Original Design by [Kathy Hong](https://www.kathyhong.com):
 
