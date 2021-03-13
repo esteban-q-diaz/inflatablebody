@@ -29,8 +29,4 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    top: 50
-  }
-});
+const styles = StyleSheet.create({});
