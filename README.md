@@ -9,9 +9,10 @@ Demo:
 
 ![](https://inflatableimg.s3-us-west-1.amazonaws.com/inflatable.gif)
 
-Original Design by [Kathy Hong](https://www.kathyhong.com):
+# Original Design by [Kathy Hong](https://www.kathyhong.com):
 
 ![alt text](https://inflatableimg.s3-us-west-1.amazonaws.com/IMG_9599+2.jpg)
+
 
 ![alt text](https://inflatableimg.s3-us-west-1.amazonaws.com/IMG_9600+2.jpg)
 
