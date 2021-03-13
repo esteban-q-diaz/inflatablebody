@@ -5,15 +5,15 @@ import Form from './Form.js'
 export default function PaymentHeader({ navigation }) {
   return (
 <SafeAreaView style={styles.container}>
-    {/* Top left circle */}
     <View style={styles.topHeader}>
+      {/* Top left circle */}
       <View style={styles.circleContainer}>
         <View style={styles.outerCircle}>
           <View style={styles.innerCircle} />
         </View>
       </View>
 
-    {/* Middle Circle */}
+      {/* Middle Circle */}
       <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
         <View style={styles.circleContainerMid}>
           <View style={styles.outerCircleMid}>
@@ -31,17 +31,17 @@ export default function PaymentHeader({ navigation }) {
       </View>
 
     <SafeAreaView style={styles.container}>
-    {/* Top Header words */}
-      <View style={styles.topHeader}>
+      <View style={styles.topWords}>
         <Text style={styles.reservation}>Reservation</Text>
         <Text style={styles.payment}>Payment </Text>
         <Text style={styles.confirmation}>Confirmation </Text>
       </View>
 
-      {/* Body */}
-      <Text style={styles.body}>Payment</Text>
-      <Text style={styles.text}>Choose your payment method</Text>
-      <StatusBar style="auto" />
+      <View style={styles.topTitle}>
+        <Text style={styles.body}>Payment</Text>
+        <Text style={styles.text}>Choose your payment method</Text>
+        <StatusBar style="auto" />
+      </View>
 
       {/* Form */}
       <Form navigation={navigation}/>
@@ -61,6 +61,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'white',
+    marginTop: 80
+  },
+  topWords:{
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    left: 8,
+  },
+  topTitle:{
+    marginBottom: 12,
+    marginTop: 10,
   },
   circleContainer: {
     justifyContent: 'center',
@@ -146,11 +158,16 @@ const styles = StyleSheet.create({
   body: {
     color: '#0E4444',
     fontSize: 50,
+    top: 30,
+    textAlignVertical: 'center',
+    alignItems: 'center',
+    left: 20,
   },
   text: {
     letterSpacing: 1,
     paddingTop: 5,
     color: '#817D7D',
+    top: 30,
   }
 });
 

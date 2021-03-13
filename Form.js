@@ -94,85 +94,110 @@ function Form ( {navigation} ) {
   }
 
   return (
-    <View>
+    <View style={styles.container}>
 
-    <SafeAreaView style={{margin: 20}} >
-      <Text style={stylesTwo.fullName}>Full name</Text>
+      <SafeAreaView style={{margin: 20, top: 60}} >
+        <View style={stylesTwo.fullNameInput}>
+          <Text
+            style={stylesTwo.fullName}>
+              Full name
+          </Text>
 
-      <TextInput style={styles.form} placeholder=""
-      color='#2A2A2A'
-      onChangeText={text => editFullName(text)}
-      />
-      <Text style={stylesTwo.fullName}>Credit card</Text>
-      <TextInput
-      placeholder="1234 1234 1234 1234"placeholderTextColor="#A09D9D"
-      color='#2A2A2A' placeholderTextSize={secure} fontSize={secure}
-      onChangeText={text => editFullName(text)}
-      value={cardNumber}
-      returnKeyType='next'
-      keyboardType = {'numeric'}
-      // onChangeText={handleCardNumber}
-      style={styles.form} placeholder=""
-      maxLength='16'
-      secureTextEntry={true}
-      color='#2A2A2A'
-      placeholderTextColor="#A09D9D"
-      onChangeText={text => editCard(text)}
-      />
-    </SafeAreaView>
+          <TextInput
+            style={styles.form}
+            placeholder=""
+            value={fullName}
+            color='#2A2A2A'
+            onChangeText={text => editFullName(text)}
+          />
+        </View>
 
-    <SafeAreaView style={{margin: 20, flex: 1, flexDirection: 'row'}} >
-      <View>
-      <TextInput style={styles.formBottom} placeholder="Exp date" value={expDate}placeholderTextColor="#A09D9D" placeholderTextSize='3' onChangeText={handleExpNumber} maxLength='7'
-      // onChangeText={text => editExpDate(text)}
-      />
-      </View>
+        <Text
+          style={stylesTwo.fullName}>
+            Credit card
+        </Text>
 
-      <View>
-      <TextInput style={styles.formBottom} placeholder="CVC"
-      maxLength='3'
-      secureTextEntry={true}placeholderTextColor="#A09D9D"
-      onChangeText={text => editCvc(text)}
-      />
-      </View>
-    </SafeAreaView>
-
-    <SafeAreaView style={stylesTwo.buttonContainer}>
-      <View style={stylesTwo.button}>
-        <Button
-          title="Pay Now"
-          color="#fff"
-          onPress={() => {submit();}}
+        <TextInput
+          style={styles.form}
+          placeholderTextColor="#A09D9D"
+          color='#2A2A2A'
+          value={cardNumber}
+          fontSize={secure}
+          returnKeyType='next'
+          keyboardType = {'numeric'}
+          // onChangeText={handleCardNumber}
+          placeholder=""
+          maxLength='16'
+          secureTextEntry={true}
+          onChangeText={text => editCard(text)}
         />
-      </View>
+      </SafeAreaView>
 
-      <View style={stylesTwo.cancelButton}>
-        <Button style={stylesTwo.button}
-          title="Cancel"
-          color="#817D7D"
-          onPress={() =>
-            navigation.navigate('Confirmation', { name: 'Jane' })
-          }
-          // onPress={() => {cancel();}}
-        />
-      </View>
-  </SafeAreaView>
+      <SafeAreaView style={{margin: 20, flex: 1, flexDirection: 'row', top: 30}} >
+        <View>
+          <TextInput
+            style={styles.formBottom}
+            placeholder="Exp date"
+            value={expDate}
+            placeholderTextColor="#A09D9D"
+            placeholderTextSize='3'
+            onChangeText={handleExpNumber}
+            maxLength='7'
+            onChangeText={text => editExpDate(text)}
+          />
+        </View>
+
+        <View>
+          <TextInput
+            style={styles.formBottom}
+            placeholder="CVC"
+            maxLength='3'
+            secureTextEntry={true}
+            placeholderTextColor="#A09D9D"
+            value={cvc}
+            onChangeText={text => editCvc(text)}
+          />
+        </View>
+      </SafeAreaView>
+
+      <SafeAreaView style={stylesTwo.buttonContainer}>
+        <View style={stylesTwo.button}>
+          <Button
+            title="Pay Now"
+            color="#fff"
+            // onPress={() => { submit(); }}
+            onPress={() =>
+              navigation.navigate('Confirmation', { name: 'Customer' })
+            }
+          />
+        </View>
+
+        <View style={stylesTwo.cancelButton}>
+          <Button style={stylesTwo.button}
+            title="Cancel"
+            color="#817D7D"
+            onPress={() => { cancel(); }}
+          />
+        </View>
+      </SafeAreaView>
 
     </View>
 
   )
 }
 
-
 const stylesTwo = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
   },
   item: {
     width: '50%'
+  },
+  fullNameInput: {
+    marginBottom: 22,
   },
   fullName: {
     color: '#A09D9D',
@@ -185,7 +210,7 @@ const stylesTwo = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 300,
     marginLeft: 32,
-
+    top: 80
   },
   button: {
     borderWidth: 1,
