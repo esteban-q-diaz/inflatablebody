@@ -113,14 +113,13 @@ const confirmationStyle = StyleSheet.create({
     width: 16,
     height: 16,
     margin: 5,
-    backgroundColor: '#C4C4C4'
+    backgroundColor: '#C4C4C4',
   },
   circleContainerMid: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
     marginRight: 9,
-    marginLeft: -12,
+    marginLeft: -20,
   },
   outerCircleMid: {
     borderRadius: 0,
@@ -133,7 +132,7 @@ const confirmationStyle = StyleSheet.create({
     width: 16,
     height: 16,
     margin: 5,
-    backgroundColor: '#C4C4C4'
+    backgroundColor: '#C4C4C4',
   },
   circleContainerRight: {
     justifyContent: 'center',
@@ -155,7 +154,7 @@ const confirmationStyle = StyleSheet.create({
     width: 16,
     height: 16,
     margin: 5,
-    backgroundColor: '#4A7373'
+    backgroundColor: '#4A7373',
   },
   reservation:{
     paddingRight: 20,

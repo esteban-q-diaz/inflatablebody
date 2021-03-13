@@ -12,85 +12,23 @@ function Form ( {navigation} ) {
   const [cvc, editCvc] = React.useState(0)
   const [secure, editSecure] = React.useState('3')
 
-  // useEffect() {
-  //   alert('useEffect working')
-  // }
-
-  // function submit() {
-  //   let form = {
-  //     fullName,
-  //     cardNumber,
-  //     expDate,
-  //     cvc
-  //   }
-  //   axios.post('http://localhost:8080/post', form)
-  //     .then(res => console.log(res.data))
-  //     .catch(err => console.log('err'))
-  // }
+  function submit() {
+    let form = {
+      fullName,
+      cardNumber,
+      expDate,
+      cvc
+    }
+    axios.post('http://localhost:8080/post', form)
+      .then(res => console.log(res.data))
+      .catch(err => console.log('err'))
+  }
 
   function cancel() {
     editFullName(prevState => prevState = '')
     editCard(prevState => prevState = '')
     editExpDate(prevState => prevState = '')
     editCvc(prevState => prevState = '')
-  }
-
-  handleCardNumber = (text) => {
-    let formattedText = text.split(' ').join('');
-    if (formattedText.length > 0) {
-      formattedText = formattedText.match(new RegExp('.{1,4}', 'g')).join(' ');
-    }
-    console.log(formattedText.length)
-    for(var i = 0; i < formattedText.length; i++) {
-      console.log('thisone:', formattedText[i])
-      // if (formattedText.length === 6) {
-        // editSecure(prevState => prevState = false)
-        // editCard((prevState) => {formattedText = prevState + ' '})
-        // console.log(`&bull`)
-      if (formattedText.length === 4) {
-        // editSecure(prevState => prevState = '10')
-        formattedText = `●●●● `
-      }
-// }
-      if (formattedText.length === 8) {
-        formattedText = `●●●● ●●●● `
-      }
-
-      if (formattedText.length === 12) {
-        formattedText = `●●●● ●●●● ●●●● `
-      }
-
-      // if (formattedText.length === 16) {
-      //   formattedText = `**** **** ****`
-      // }
-    }
-    editCard(prevState => formattedText)
-    return formattedText;
-  }
-
-  handleExpNumber = (text) => {
-    let formattedText = text.split(' ').join('');
-    // if (formattedText.length > 0) {
-    //   formattedText = formattedText.match(new RegExp('.{1,4}', 'g')).join(' ');
-    // }
-    console.log(formattedText.length)
-    for(var i = 0; i < formattedText.length; i++) {
-      console.log('thisone:', formattedText[i])
-      // if (formattedText.length === 6) {
-        // editSecure(prevState => prevState = false)
-        // editCard((prevState) => {formattedText = prevState + ' '})
-        // console.log(`&bull`)
-      if (formattedText.length === 2) {
-        // editCvc(prevState => prevState = '10')
-        console.log("form text: ", formattedText)
-        editExpDate(prevState => formattedText + ` / `)
-      } else {
-         editExpDate(prevState => formattedText)
-      }
-
-    }
-
-    return formattedText;
   }
 
   return (
@@ -122,10 +60,9 @@ function Form ( {navigation} ) {
           placeholderTextColor="#A09D9D"
           color='#2A2A2A'
           value={cardNumber}
-          fontSize={secure}
+          fontSize={15}
           returnKeyType='next'
           keyboardType = {'numeric'}
-          // onChangeText={handleCardNumber}
           placeholder=""
           maxLength='16'
           secureTextEntry={true}
@@ -165,7 +102,7 @@ function Form ( {navigation} ) {
           <Button
             title="Pay Now"
             color="#fff"
-            // onPress={() => { submit(); }}
+            onPress={() => { submit(); }}
             onPress={() =>
               navigation.navigate('Confirmation', { name: 'Customer' })
             }
